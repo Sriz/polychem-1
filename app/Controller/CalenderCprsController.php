@@ -69,6 +69,8 @@ class CalenderCprsController extends AppController
             //echo $date;exit;
             $this->set('netwt', $this->CalenderCpr->query("SELECT sum(length) as total FROM calender_cpr"));
             $this->set('leng', $this->CalenderCpr->query("SELECT sum(ntwt) as total FROM calender_cpr "));
+
+
             $this->set('mxwt', $this->CalenderCpr->query("SELECT sum(REPLACE(total, ',', '')) as total FROM calender_cpr "));
             $sps = $this->CalenderScrap->query("SELECT * FROM calender_scrap where date='$sc'");
             $this->set('scraps', $sps);

@@ -12,7 +12,6 @@
         </tr>
         <?php foreach ($baseEmbosses as $baseEmboss): ?>
             <tr>
-
                 <td><?php echo h($baseEmboss['BaseEmboss']['Brand']); ?>&nbsp;</td>
                 <td><?php echo h($baseEmboss['BaseEmboss']['Dimension']); ?>&nbsp;</td>
                 <td><?php echo h($baseEmboss['BaseEmboss']['Type']); ?>&nbsp;</td>
