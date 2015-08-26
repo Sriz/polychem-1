@@ -253,7 +253,7 @@
             <td><?php echo h($calenderCpr['CalenderCpr']['embossing']); ?>&nbsp;</td>
             <td><?php echo h($calenderCpr['CalenderCpr']['Dimension']); ?>&nbsp;</td>
             <td align="right"><?php echo h(number_format($calenderCpr['CalenderCpr']['length'])); ?>&nbsp;</td>
-            <td align="right"><?php echo h(number_format($calenderCpr['CalenderCpr']['ntwt'])); ?>&nbsp;</td>
+            <td align="right"><?php echo  h(number_format($calenderCpr['CalenderCpr']['ntwt'])); ?>&nbsp;</td>
             <td align="right"><?php echo h($calenderCpr['CalenderCpr']['total']); ?>&nbsp;</td>
 
 
@@ -266,7 +266,6 @@
     <?php endforeach; ?>
     <?php
     //total netwt of current data
-    //$netwt_current =
     $length_current = 0;
     $ntwt_current = 0;
     $mixing_wt_current = 0;
@@ -274,7 +273,7 @@
     foreach($calenderCprs as $c):
         $length_current = $c['CalenderCpr']['length']+ $length_current;
         $ntwt_current = $c['CalenderCpr']['ntwt']+ $ntwt_current;
-        $mixing_wt_current = $c['CalenderCpr']['total']+ $mixing_wt_current;
+        $mixing_wt_current = floatval(str_replace(',','',$c['CalenderCpr']['total']))+ $mixing_wt_current;
     endforeach;
     ?>
     <tr class="success">
