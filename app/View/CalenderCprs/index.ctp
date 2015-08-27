@@ -264,6 +264,7 @@
             </td>
         </tr>
     <?php endforeach; ?>
+
     <?php
     //total netwt of current data
     $length_current = 0;
@@ -276,6 +277,7 @@
         $mixing_wt_current = floatval(str_replace(',','',$c['CalenderCpr']['total']))+ $mixing_wt_current;
     endforeach;
     ?>
+
     <tr class="success">
         <td align="right" colspan="7"><strong>Total of current data</strong></td>
         <td align="right"><strong><?=h(number_format($length_current, 2));?></strong></td>
@@ -293,9 +295,7 @@
         </td>
         </td>
         <td align="right">
-            <strong><?php
-
-                foreach ($mxwt as $ntwt): echo number_format($ntwt['0']['total'], 2); endforeach; ?></strong>
+            <strong><?php foreach ($mxwt as $ntwt): echo number_format($ntwt['0']['total'], 2); endforeach; ?> </strong>
         <td
     </tr>
 

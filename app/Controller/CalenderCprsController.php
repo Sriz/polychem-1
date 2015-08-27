@@ -56,7 +56,7 @@ class CalenderCprsController extends AppController
         $this->total();
 
         $this->Filter->setPaginate('order', 'CalenderCpr.date DESC'); // optional
-        $this->Filter->setPaginate('limit', 10);              // optional
+        $this->Filter->setPaginate('limit',20);              // optional
 
         // Define conditions
         $this->Filter->setPaginate('conditions', $this->Filter->getConditions());
@@ -388,9 +388,9 @@ FROM calender_scrap where date='$dat'");
     {
         $this->loadModel('ConsumptionStock');
 
-        //$this->request->onlyAllow('ajax');
+        $this->request->onlyAllow('ajax');
         $date = isset($_POST['city_id'])?$_POST['city_id']:Date('Y-m-d');
-        $date = '2072-04-01';
+        //$date = '2072-04-01';
 
         $this->set('today', $date);
         //$date=$this->Session->read('date');

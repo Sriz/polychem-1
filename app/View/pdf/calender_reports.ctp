@@ -87,14 +87,14 @@ foreach ($cal as $calenderCpr) {
     $html .= '<tr><td>' . $calenderCpr['calender_cpr']['date'] . '</td><td>' . $calenderCpr['calender_cpr']['shift'] . '</td><td>' . $calenderCpr['calender_cpr']['type'] . '</td><td>' . $calenderCpr['calender_cpr']['quality'] . '</td><td>' . $calenderCpr['calender_cpr']['color'] . '</td><td>' . $calenderCpr['calender_cpr']['Dimension'] . '</td><td>' . $calenderCpr['calender_cpr']['embossing'] . '</td><td>' . number_format($calenderCpr['calender_cpr']['length'], 2) . '</td><td>' . number_format($calenderCpr['calender_cpr']['ntwt'], 2) . '</td></tr>';
 };
 foreach ($totalntlg as $totals) {
-    $html .= '<tr><td>Total </td><td colspan="6"></td><td>' . number_format($totals['0']['total_length'], 2) . '</td><td>' . number_format($totals['0']['total_ntwt'], 2) . '</td></tr></table>';
+    $html .= '<tr><td colspan="7">Total </td><td>' . number_format($totals['0']['total_length'], 2) . '</td><td>' . number_format($totals['0']['total_ntwt'], 2) . '</td></tr>';
 };
 foreach ($total_to_month as $totals) {
-    $html .= '<tr><td>Total of this Month<?=subatr($today,0,7);?></td><td colspan="6"></td><td>' . number_format($totals['0']['total_length'], 2) . '</td><td>' . number_format($totals['0']['total_ntwt'], 2) . '</td></tr></table>';
+    $html .= '<tr><td colspan="7">Total of this Month<?=subatr($today,0,7);?></td><td>' . number_format($totals['0']['total_length'], 2) . '</td><td>' . number_format($totals['0']['total_ntwt'], 2) . '</td></tr>';
 };
 
 foreach ($total_to_year as $totals) {
-    $html .= '<tr><td>Total of this Year</td><td colspan="6"></td><td>' . number_format($totals['0']['total_length'], 2) . '</td><td>' . number_format($totals['0']['total_ntwt'], 2) . '</td></tr></table>';
+    $html .= '<tr><td colspan="7">Total of this Year</td><td>' . number_format($totals['0']['total_length'], 2) . '</td><td>' . number_format($totals['0']['total_ntwt'], 2) . '</td></tr></table>';
 };
 $pdf->writeHTML($html, true, false, true, false, '');
 $pdf->lastPage();
@@ -116,7 +116,7 @@ $input = isset($total[0][0]['total'])?$total[0][0]['total']:'0';
 $netwt = isset($total_to_month[0][0]['total_ntwt'])?$total_to_month[0][0]['total_ntwt']:'0';
 $scrap_generated = isset($scrapsused[0]['calender_scrap']['total_scrap_generated'])?$scrapsused[0]['calender_scrap']['total_scrap_generated']:'0';
 $unaccountloss = $input-$netwt-$scrap_generated;
-$html .= '<table><tr><td align="left">Unaccounted Loss</td><td>'.$unaccountloss .'</td></tr></table>';
+$html .= '<tr><td align="left">Unaccounted Loss</td><td align="right">'.$unaccountloss .'</td></tr>';
 
 $html .= '</table>';
 $pdf->writeHTML($html, true, false, true, false, '');
@@ -150,20 +150,26 @@ if ($m >= 60) {
     if ($rem >= 1)
         $h = $h - 1;
     $rem = 60 - $rem;
-    $tdworkinghour = $h . '.' . $rem;
+    $tdworkinghour = $h.' Hours '.$rem.' Minutes';
 } else {
     if ($m >= 1) {
         if ($h >= 1)
             $h = $h - 1;
         $m = 60 - $m;
-        $tdworkinghour = $h . '.' . $m;
+        $tdworkinghour = $h . ' Hours' . $m.' Minutes';
     } else
-        $tdworkinghour = $h . '.' . $m;
+        $tdworkinghour = $h . 'Hours '. $m.' Minutes';
 }
-echo "<div style='clear: both'></div>";
-$html .= '<tr><td>Total Breakdown = </td></td colspan="4">' . $tl_break . '</td></tr>';
-$html .= '<tr><td>Total LossHour= </td></td colspan="4">' . $tl_loss . '</td></tr><br>';
-$html .= '<tr><td>Total Working Hour</td><td colspan="4">' . $tdworkinghour . '</td></tr><br>';
+$html .= '<tr><td width="300px" style="text-transform:capitalize"></td><td width="374px"></td></tr>';
+$html .= '<tr><td width="300px" style="text-transform:capitalize">Total Breakdown</td><td width="374px">' . $tl_break . '</td></tr>';
+$html .= '<tr><td width="300px" style="text-transform:capitalize">Total LossHour</td><td width="374px">' . $tl_loss . '</td></tr>';
+$html .= '<tr><td width="300px" style="text-transform:capitalize">Total Working Hour</td><td width="374px">' . $tdworkinghour . '</td></tr></table>';
+
+
+/*
+$html .= '<tr><td>Total Breakdown = </td></td>' . $tl_break . '</td></tr>';
+$html .= '<tr><td>Total LossHour= </td></td>' . $tl_loss . '</td></tr>';
+$html .= '<tr><td>Total Working Hour</td><td>' . $tdworkinghour . '</td></tr><br></table>';*/
 $html .= '</table><table width="50%" align="center"><tr><td></td></tr><tr><td>Signature  ...................................</td></tr></table>';
 $pdf->writeHTML($html, true, false, true, false, '');
 $pdf->lastPage();
