@@ -10,10 +10,6 @@
         }
 
     });
-    function rest() {
-
-
-    }
 </script>
 
 
@@ -186,9 +182,9 @@
         $date = date('d-m-Y');
         $d = $nepdate['year'] . '-' . $nepdate['month'] . '-' . $nepdate['date'];
         //echo $this->Form->input('nepalidate',array('value'=>$d,'id'=>'nepali-calendar','class'=>'nepali-calendar','onchange'=>'rest();'));
-        echo $this->Form->input('nepalidate', array('id' => 'nepali-calendar', 'class' => 'input input-sm nepali-calendar', 'onchange' => 'rest();'));
+        echo $this->Form->input('nepalidate', array('id' => 'nepali-calendar', 'class' => 'input input-sm nepali-calendar', 'required', 'value' => ''));
         //echo $this->Form->input('date',array('value'=>$date,'id'=>'datepicker','class'=>'datepicker','onchange'=>'rest();'));
-        echo $this->Form->input('shift', array('options' => array('A' => 'A', 'B' => 'B'), 'id' => 'shift', 'class' => 'input input-sm shift', 'onchange' => 'test()'));
+        echo $this->Form->input('shift', array('options' => array('null' => 'Null', 'A' => 'A', 'B' => 'B'), 'required' => 'required', 'id' => 'shift', 'class' => 'input input-sm shift', 'onchange' => 'test()'));
         echo $this->Form->input('brand', array('id' => 'brand', 'class' => 'input input-sm brand', 'options' => array('Please Select' => 'Please Select', $brand), 'onchange' => 'brandchange()', 'values' => 'please select'));
         echo $this->Form->input('quality_id', array('class' => 'input input-sm quality', 'id' => 'quality', 'onchange' => 'qwt()', 'options' => array('null' => 'select')));
         echo $this->Form->input('dimension', array('options' => array('select' => 'select dimension', '0.30 x 1950' => '0.30 x 1950', '0.45 x 1950' => '0.45 x 1950', '0.46 x 2150' => '0.46 x 2150'
@@ -207,7 +203,8 @@
                 'between' => '<div class="col-xs-10">',
                 'after' => '</div>',
                 'error' => array('attributes' => array('wrap' => 'span', 'class' => 'help-inline')),
-            )));//('ConsumptionStock',array('onsubmit' => 'return itsclicked;')); ?>
+            )));//('ConsumptionStock',array('onsubmit' => 'return itsclicked;'));
+        ?>
         <fieldset>
 
             <!--Generating unique random numbers-->

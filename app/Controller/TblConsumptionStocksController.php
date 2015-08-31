@@ -8,16 +8,8 @@ App::import('Controller', 'ConvertDates');
  * @property ConsumptionStock $ConsumptionStock
  * @property PaginatorComponent $Paginator
  */
-class ConsumptionStocksController extends AppController
+class TblConsumptionStocksController extends AppController
 {
-
-    /**
-     * Components
-     *
-     * @var array
-     *
-     */
-
     public $components = array('Paginator', 'RequestHandler');
 
 
@@ -28,59 +20,18 @@ class ConsumptionStocksController extends AppController
      */
     public function index()
     {
-        $this->ConsumptionStock->recursive = 0;
+        $this->TblConsumptionStock->recursive = 0;
         $this->loadModel('Material');
         $this->loadModel('MixingMaterial');
         $this->loadModel('Quality');
-        $this->material();
-        $this->Filter->addFilters(
-            array(
-                'filter1' => array(
-                    'ConsumptionStock.nepalidate' => array(
-                        'operator' => 'LIKE',
-                        'value' => array(
-                            'before' => '%', // optional
-                            'after' => '%'  // optional
-                        )
-                    )
-                )
-            )
-        );
-
-        /*
-            $rows = $this->MixingMaterial->find('count');
-            $this->Filter->setPaginate('limit', $rows);// optional
-
-            $this->Filter->setPaginate('conditions', $this->Filter->getConditions());
-            $this->paginate = array('limit' => $rows*4, 'page' => 1,'order'=>array('nepalidate'=>'desc'));
-            $this->set('consumptionStocks', $this->Paginator->paginate());
+        $this->loadModel('TblConsumptionStock');
 
 
-            $this->paginate = array('limit' => $rows*4, 'page' => 1,'order'=>array('consumption_id'=>'desc'));
-        */
+        $consumptions = $this->TblConsumptionStock->find('all');
+        $material_lists = $this->MixingMaterial->find('all');
 
-
-        $rows = $this->MixingMaterial->find('count');
-        $this->Filter->setPaginate('limit', $rows);// optional
-
-        // $this->Filter->setPaginate('conditions', $this->Filter->getConditions());
-        //$this->paginate = array('limit' => $rows*4, 'page' => 1,'order'=>array('nepalidate'=>'desc'));
-        //$this->User->recursive = 0;
-        //$this->set('consumptionStocks', $this->paginate());
-
-
-        // $this->paginate = array('limit' => $rows*4, 'page' => 1,'order'=>array('consumption_id'=>'desc'));
-
-//
-        //print_r($row);exit;
-        $this->Filter->setPaginate('order', 'ConsumptionStock.consumption_id DESC'); // optional
-        $this->Filter->setPaginate('limit', $rows * 4);              // optional
-
-        // Define conditions
-        $this->Filter->setPaginate('conditions', $this->Filter->getConditions());
-
-        $this->ConsumptionStock->recursive = 0;
-        $this->set('consumptionStocks', $this->paginate());
+        $this->set('consumptions',$consumptions);
+        $this->set('material_lists',$material_lists);
     }
     /**
      * view method
@@ -104,32 +55,22 @@ class ConsumptionStocksController extends AppController
      */
     public function add()
     {
-        $type = "";
-        $d = date('d');
-        $m = date('m');
-        $y = date('Y');
-        $obj = new ConvertDatesController;
-        $this->set('nepdate', $obj->eng_to_nep($y, $m, $d));
-        $this->material();
         if ($this->request->is('post')) {
-            $this->ConsumptionStock->create();
-            if ($this->ConsumptionStock->saveAll($this->request->data['Consumption'])) {
-                $date = date('d-m-Y');
-                $this->loadModel('DepartmentStock');
-                $i = 0;
-                foreach ($this->ConsumptionStock->query("select material_id,quantity from consumption_stock where date='$date' order by consumption_id desc limit 0,32 ") as $d):
-                    $qt = $d['consumption_stock']['quantity'];
-                    $mat = $d['consumption_stock']['material_id'];
-                    $this->DepartmentStock->query("update department_stock set department_stock.quantity = quantity-'$qt', department_stock.date = '$date' where department_stock.material_id = '$mat' and  department_stock.department_id = 'mixing'");
-                    $i = $i + 1;
-                endforeach;
-                //print'<pre>';print_r($rand_num);print'</pre>';die;
-                $this->Session->setFlash(__('The consumption stock has been saved.'), array('class' => 'alert alert-success'));
-                return $this->redirect(array('action' => 'index'));
-            } else {
-                $this->Session->setFlash(__('The consumption stock could not be saved. Please, try again.'), array('class' => 'alert alert-danger'));
+
+            $data = $this->request->data;
+            //encode materials array as json
+            $data['materials'] = json_encode($data['materials']);
+            //save
+            if ($this->TblConsumptionStock->save($data)) {
+                // Set a session flash message and redirect.
+                $this->Session->setFlash('Data Saved!');
+                return $this->redirect('index');
             }
+
         }
+        $this->loadModel('MixingMaterials');
+        $materials = $this->MixingMaterials->find('all');
+        $this->set('materials',$materials);
     }
 
     /**
@@ -141,86 +82,29 @@ class ConsumptionStocksController extends AppController
      */
     public function edit($id = null)
     {
-        $this->loadModel('Base');
-        $this->loadModel('BaseEmboss');
-        $this->loadModel('Dimension');
-        $this->loadModel('MixingMaterial');
-        $this->loadModel('CalenderCpr');
-        $count = $this->MixingMaterial->query("select count(name) as total from mixing_materials");
 
-        foreach ($count as $c):
-            $t = $c['0']['total'];
+        $this->TblConsumptionStock->id = $id;
 
-        endforeach;
-        //echo $t;die;
-        $end = $id;
-        $start = ($id - $t) + 1;
-        //echo $start, $end;exit;
+        if ($this->request->is('post')) {
 
-        $uid = $this->ConsumptionStock->query("select distinct(uid) as uid from consumption_stock where consumption_id= $id ");
-        //print_r($uid);exit;
-        $mid = $uid[0]['consumption_stock']['uid'];
-
-
-        $brd = $this->ConsumptionStock->query("select brand from consumption_stock where consumption_id between $start and $end");
-        $mixing_brand = $brd['0']['consumption_stock']['brand'];
-
-        $quality_mixing = $this->BaseEmboss->find('list', array('fields' => array('type', 'type'), 'conditions' => array('baseemboss.brand' => $mixing_brand), 'order' => 'type ASC'));
-        $this->set('tp', $quality_mixing);
-
-        $dmnsno = $this->BaseEmboss->find('list', array('fields' => array('dimension', 'dimension'), 'conditions' => array('baseemboss.brand' => $mixing_brand), 'order' => 'dimension ASC'));
-        $this->set('dn', $dmnsno);
-
-        $qlty = $this->BaseEmboss->find('list', array('fields' => array('color', 'color'), 'conditions' => array('brand' => $brd['0']['consumption_stock']['brand']), 'order' => 'color ASC'));
-        $this->set('cl', $qlty);
-
-
-        //Original Query
-        //$this->set('datas',$this->ConsumptionStock->query("select * from consumption_stock where consumption_id between $start and $end"));
-        $this->set('datas', $this->ConsumptionStock->query("select * from consumption_stock,mixing_materials where consumption_id between $start and $end and consumption_stock.m_id=mixing_materials.id order by consumption_stock.consumption_id desc"));
-        $this->material();
-        $this->set('material_name', $this->MixingMaterial->query("select * from mixing_materials"));
-
-        $clr = $this->BaseEmboss->find('list', array('fields' => array('color', 'color'), 'order' => 'color', 'group' => 'color'));;
-        $this->set('clo', $clr);
-        $dmnsn = $this->BaseEmboss->find('list', array('fields' => array('dimension', 'dimension'), 'order' => 'dimension'));
-        $this->set('dmnsn', $dmnsn);
-        $type = $this->BaseEmboss->find('list', array('fields' => array('type', 'type'), 'order' => 'type', 'group' => 'type'));
-        $this->set('tr', $type);
-        if (!$this->ConsumptionStock->exists($id)) {
-            throw new NotFoundException(__('Invalid consumption stock'));
-        }
-
-
-        if ($this->request->is(array('post', 'put'))) {
-
-            $this->CalenderCpr->query("delete from calender_cpr where uid=$mid");
-            foreach ($this->request->data as $data):
-                $d[] = $data;
-            endforeach;
-            for ($i = 1; $i <= $t; $i++) {
-                $quality = $d['0'][$i]['quality_id'];
-                $brand = $d['0'][$i]['brand'];
-                $quantity = $d['0'][$i]['quantity'];
-                $color = $d['0'][$i]['color'];
-                $dimension = $d['0'][$i]['dimension'];
-                $date = $d['0'][$i]['date'];
-                $total = $d['0'][$i]['total'];
-                $shift = $d['0'][$i]['shift'];
-
-                $this->ConsumptionStock->query("UPDATE `consumption_stock` SET  `quality_id`='$quality',shift='$shift', inserted='0', total='$total' ,`brand`='$brand',  `quantity`='$quantity',  `color`='$color',   `dimension`='$dimension',  `date`='$date' WHERE `consumption_stock`.`consumption_id` = $start");
-
-                $start = $start + 1;
-                //echo "H";
+            $data = $this->request->data;
+            //encode materials array as json
+            $data['materials'] = json_encode($data['materials']);
+            //save
+            if ($this->TblConsumptionStock->save($data)) {
+                // Set a session flash message and redirect.
+                $this->Session->setFlash('Data Saved!');
+                return $this->redirect('index');
             }
 
-
-            $options = array('conditions' => array('ConsumptionStock.' . $this->ConsumptionStock->primaryKey => $id));
-            $this->request->data = $this->ConsumptionStock->find('first', $options);
-            return $this->redirect(array('action' => 'index'));
         }
-        //$this->material();
-        //$this->edit_data($start,$end);
+        $sql = "SELECT * FROM tbl_consumption_stock WHERE  id=$id";
+        $consumption = $this->TblConsumptionStock->query($sql);
+
+        $this->loadModel('MixingMaterials');
+        $materials = $this->MixingMaterials->find('all');
+        $this->set('materials',$materials);
+        $this->set('consumption',$consumption);
     }
 
 
