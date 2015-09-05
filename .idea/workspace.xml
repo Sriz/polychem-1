@@ -28,100 +28,96 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ConsumptionStocksController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Controller/ConsumptionStocksController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.384615" vertical-offset="390" max-vertical-offset="11730">
-              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-              <folding>
-                <marker date="1441425611526" expanded="true" signature="3819:3928" placeholder="select mater..consumption_stock..." />
-                <marker date="1441425611526" expanded="true" signature="4121:4315" placeholder="update depar..." />
-                <marker date="1441425611526" expanded="true" signature="5255:5304" placeholder="select count..mixing_materials..." />
-                <marker date="1441425611526" expanded="true" signature="5555:5628" placeholder="select disti..consumption_stock..." />
-                <marker date="1441425611526" expanded="true" signature="5767:5843" placeholder="select brand..consumption_stock..." />
-                <marker date="1441425611526" expanded="true" signature="6826:7013" placeholder="select * fro..consumption_stock..." />
-                <marker date="1441425611526" expanded="true" signature="7111:7141" placeholder="select * fro..mixing_materials..." />
-                <marker date="1441425611526" expanded="true" signature="7873:7908" placeholder="delete from ..." />
-                <marker date="1441425611526" expanded="true" signature="9599:9648" placeholder="select count..mixing_materials..." />
-                <marker date="1441425611526" expanded="true" signature="9699:9772" placeholder="select disti..consumption_stock..." />
-                <marker date="1441425611526" expanded="true" signature="10237:10272" placeholder="delete from ..." />
-                <marker date="1441425611526" expanded="true" signature="10324:10394" placeholder="delete from ..." />
-                <marker date="1441425611526" expanded="true" signature="11807:11856" placeholder="select disti..consumption_stock..." />
-                <marker date="1441425611526" expanded="true" signature="12451:12499" placeholder="select dimen..dimension..." />
-                <marker date="1441425611526" expanded="true" signature="12545:12589" placeholder="select color..dimension..." />
-                <marker date="1441425611526" expanded="true" signature="13655:13709" placeholder="select disti..baseemboss..." />
-                <marker date="1441425611526" expanded="true" signature="14292:14384" placeholder="select disti..baseemboss..." />
-                <marker date="1441425611526" expanded="true" signature="14964:15033" placeholder="select disti..baseemboss..." />
-                <marker date="1441425611526" expanded="true" signature="15594:15662" placeholder="update consu..." />
-                <marker date="1441425611526" expanded="true" signature="16096:16169" placeholder="select disti..consumption_stock..." />
-                <marker date="1441425611526" expanded="true" signature="16263:16538" placeholder="SELECT mater..." />
-                <marker date="1441425611526" expanded="true" signature="16636:16905" placeholder="SELECT mater..consumption_stock..." />
-                <marker date="1441425611526" expanded="true" signature="17014:17144" placeholder="select sum(q..consumption_stock..." />
-                <marker date="1441425611526" expanded="true" signature="17254:17467" placeholder="SELECT sum(q..consumption_stock..." />
-                <marker date="1441425611526" expanded="true" signature="17804:17928" placeholder="SELECT quant..consumption_stock..." />
-                <marker date="1441425611526" expanded="true" signature="17953:17983" placeholder="SELECT * FRO..mixing_materials..." />
-                <marker date="1441425611526" expanded="true" signature="18007:18198" placeholder="SELECT B.nam..consumption_stock..." />
-                <marker date="1441425611526" expanded="false" signature="19297:19313" placeholder="..." />
-                <marker date="1441425611526" expanded="false" signature="20753:20770" placeholder="..." />
-                <marker date="1441425611526" expanded="true" signature="22494:22571" placeholder="select nepal..consumption_stock..." />
-                <marker date="1441425611526" expanded="true" signature="23528:24584" placeholder="SELECT mater..consumption_stock..." />
-                <marker date="1441425611526" expanded="true" signature="23595:24238" placeholder="SELECT sum( ..consumption_stock..." />
-                <marker date="1441425611526" expanded="true" signature="24638:24949" placeholder="SELECT sum(q..consumption_stock..." />
-                <marker date="1441425611526" expanded="true" signature="25099:25398" placeholder="SELECT sum(q..consumption_stock..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TblConsumptionStocksController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TblConsumptionStocksController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controller/TblConsumptionStocksController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63093144" vertical-offset="474" max-vertical-offset="10098">
-              <caret line="49" column="149" selection-start-line="49" selection-start-column="149" selection-end-line="49" selection-end-column="149" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2023">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
-                <marker date="1441437466472" expanded="true" signature="4283:4329" placeholder="SELECT * FRO..tbl_consumption_stock..." />
-                <marker date="1441437466472" expanded="true" signature="5096:5138" placeholder="delete from ..." />
-                <marker date="1441437466472" expanded="true" signature="5096:5139" placeholder="delete from ..." />
-                <marker date="1441437466472" expanded="true" signature="5454:5498" placeholder="DELETE from ..." />
-                <marker date="1441437466472" expanded="true" signature="6978:7027" placeholder="select disti..consumption_stock..." />
-                <marker date="1441437466472" expanded="true" signature="7625:7673" placeholder="select dimen..dimension..." />
-                <marker date="1441437466472" expanded="true" signature="7719:7763" placeholder="select color..dimension..." />
-                <marker date="1441437466472" expanded="true" signature="8829:8883" placeholder="select disti..baseemboss..." />
-                <marker date="1441437466472" expanded="true" signature="9466:9558" placeholder="select disti..baseemboss..." />
-                <marker date="1441437466472" expanded="true" signature="10138:10207" placeholder="select disti..baseemboss..." />
-                <marker date="1441437466472" expanded="true" signature="10765:10833" placeholder="update consu..." />
-                <marker date="1441437466472" expanded="true" signature="11267:11340" placeholder="select disti..consumption_stock..." />
-                <marker date="1441437466472" expanded="true" signature="11437:11712" placeholder="SELECT mater..." />
-                <marker date="1441437466472" expanded="true" signature="11810:12079" placeholder="SELECT mater..consumption_stock..." />
-                <marker date="1441437466472" expanded="true" signature="12188:12318" placeholder="select sum(q..consumption_stock..." />
-                <marker date="1441437466472" expanded="true" signature="12428:12641" placeholder="SELECT sum(q..consumption_stock..." />
-                <marker date="1441437466472" expanded="true" signature="12978:13102" placeholder="SELECT quant..consumption_stock..." />
-                <marker date="1441437466472" expanded="true" signature="13127:13157" placeholder="SELECT * FRO..mixing_materials..." />
-                <marker date="1441437466472" expanded="true" signature="13181:13372" placeholder="SELECT B.nam..consumption_stock..." />
-                <marker date="1441437466472" expanded="false" signature="14471:14487" placeholder="..." />
-                <marker date="1441437466472" expanded="false" signature="15927:15944" placeholder="..." />
-                <marker date="1441437466472" expanded="true" signature="17668:17745" placeholder="select nepal..consumption_stock..." />
-                <marker date="1441437466472" expanded="true" signature="18702:19424" placeholder="SELECT mater..consumption_stock..." />
-                <marker date="1441437466472" expanded="true" signature="18769:19078" placeholder="SELECT sum( ..consumption_stock..." />
-                <marker date="1441437466472" expanded="true" signature="19478:19789" placeholder="SELECT sum(q..consumption_stock..." />
-                <marker date="1441437466472" expanded="true" signature="19939:20238" placeholder="SELECT sum(q..consumption_stock..." />
-                <marker date="1441437466472" expanded="true" signature="20419:20450" placeholder="..." />
-                <marker date="1441437466472" expanded="true" signature="20819:20902" placeholder="..." />
-                <marker date="1441437466472" expanded="true" signature="20993:21082" placeholder="..." />
-                <marker date="1441437466472" expanded="true" signature="21173:21262" placeholder="..." />
-                <marker date="1441437466472" expanded="true" signature="21400:21483" placeholder="..." />
-                <marker date="1441437466472" expanded="true" signature="21584:21673" placeholder="..." />
-                <marker date="1441437466472" expanded="true" signature="21774:21863" placeholder="..." />
+                <marker date="1441439056400" expanded="true" signature="1540:1617" placeholder="select nepal..consumption_stock..." />
+                <marker date="1441439056400" expanded="true" signature="3432:3478" placeholder="SELECT * FRO..tbl_consumption_stock..." />
+                <marker date="1441439056400" expanded="true" signature="4120:4163" placeholder="delete from ..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.ctp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/View/TblConsumptionStocks/edit.ctp">
+      <file leaf-file-name="CalenderCprsController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Controller/CalenderCprsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="1717">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="5865" max-vertical-offset="8364">
+              <caret line="360" column="43" selection-start-line="360" selection-start-column="43" selection-end-line="360" selection-end-column="43" />
+              <folding>
+                <marker date="1441439694452" expanded="true" signature="535:608" placeholder="SELECT nepal..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="769:820" placeholder="select date ..." />
+                <marker date="1441439694452" expanded="true" signature="1013:1096" placeholder="select DISTI..." />
+                <marker date="1441439694452" expanded="true" signature="1227:1310" placeholder="select DISTI..." />
+                <marker date="1441439694452" expanded="true" signature="2357:2402" placeholder="SELECT sum(l..calender_cpr..." />
+                <marker date="1441439694452" expanded="true" signature="2465:2508" placeholder="SELECT sum(n..calender_cpr..." />
+                <marker date="1441439694452" expanded="true" signature="2574:2636" placeholder="SELECT sum(R..calender_cpr..." />
+                <marker date="1441439694452" expanded="true" signature="2690:2735" placeholder="SELECT * FRO..calender_scrap..." />
+                <marker date="1441439694452" expanded="true" signature="2839:2947" placeholder="SELECT sum(q..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="3005:3082" placeholder="select sum(q..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="3179:3419" placeholder="SELECT sum(q..." />
+                <marker date="1441439694452" expanded="true" signature="3527:3765" placeholder="SELECT sum(q..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="3935:4015" placeholder="SELECT date ..." />
+                <marker date="1441439694452" expanded="true" signature="4172:4288" placeholder="SELECT nepal..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="4237:4287" placeholder="SELECT max(c..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="4651:4760" placeholder="SELECT sum(q..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="4819:4897" placeholder="select sum(q..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="5037:5085" placeholder="SELECT * FRO..calender_scrap..." />
+                <marker date="1441439694452" expanded="true" signature="5182:5285" placeholder="select sum(q..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="5385:5626" placeholder="SELECT sum(q..." />
+                <marker date="1441439694452" expanded="true" signature="5734:5973" placeholder="SELECT sum(q..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="6129:6194" placeholder="SELECT sum(l..calender_cpr..." />
+                <marker date="1441439694452" expanded="true" signature="6257:6320" placeholder="SELECT sum(n..calender_cpr..." />
+                <marker date="1441439694452" expanded="true" signature="6383:6465" placeholder="SELECT sum(R..calender_cpr..." />
+                <marker date="1441439694452" expanded="true" signature="6585:6665" placeholder="SELECT date ..." />
+                <marker date="1441439694452" expanded="true" signature="6822:6938" placeholder="SELECT nepal..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="6887:6937" placeholder="SELECT max(c..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="8040:8081" placeholder="update consu..." />
+                <marker date="1441439694452" expanded="true" signature="11276:11342" placeholder="select disti..base..." />
+                <marker date="1441439694452" expanded="true" signature="11824:11894" placeholder="select disti..base..." />
+                <marker date="1441439694452" expanded="true" signature="12411:12484" placeholder="select disti..baseemboss..." />
+                <marker date="1441439694452" expanded="true" signature="12861:12934" placeholder="select disti..BaseEmboss..." />
+                <marker date="1441439694452" expanded="true" signature="13256:13329" placeholder="select disti..BaseEmboss..." />
+                <marker date="1441439694452" expanded="true" signature="13659:13732" placeholder="select disti..BaseEmboss..." />
+                <marker date="1441439694452" expanded="true" signature="14069:14142" placeholder="select disti..BaseEmboss..." />
+                <marker date="1441439694452" expanded="true" signature="14656:14733" placeholder="SELECT nepal..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="15003:15079" placeholder="select sum(q..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="15207:15253" placeholder="SELECT * FRO..calender_scrap..." />
+                <marker date="1441439694452" expanded="true" signature="15342:15443" placeholder="select sum(q..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="15535:15774" placeholder="SELECT sum(q..." />
+                <marker date="1441439694452" expanded="true" signature="15874:16111" placeholder="SELECT sum(q..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="16315:16392" placeholder="SELECT nepal..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="16552:17153" placeholder="SELECT disti..BaseEmboss..." />
+                <marker date="1441439694452" expanded="true" signature="17348:17374" placeholder="select * fro..calender_cpr..." />
+                <marker date="1441439694452" expanded="true" signature="18314:18554" placeholder="SELECT sum(q..." />
+                <marker date="1441439694452" expanded="true" signature="18648:18725" placeholder="select sum(q..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="18820:19058" placeholder="SELECT sum(q..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="19194:19238" placeholder="select *from..calender_cpr..." />
+                <marker date="1441439694452" expanded="true" signature="19319:19415" placeholder="select sum(l..calender_cpr..." />
+                <marker date="1441439694452" expanded="true" signature="19541:19649" placeholder="select sum(l..calender_cpr..." />
+                <marker date="1441439694452" expanded="true" signature="19779:19886" placeholder="select sum(l..calender_cpr..." />
+                <marker date="1441439694452" expanded="true" signature="20056:20102" placeholder="select *from..calender_scrap..." />
+                <marker date="1441439694452" expanded="true" signature="20225:20316" placeholder="select * fro..time_loss..." />
+                <marker date="1441439694452" expanded="true" signature="20558:20674" placeholder="SELECT SUM(t..time_loss..." />
+                <marker date="1441439694452" expanded="true" signature="20675:20693" placeholder="/*order BY T..." />
+                <marker date="1441439694452" expanded="true" signature="20920:21036" placeholder="SELECT SUM(t..time_loss..." />
+                <marker date="1441439694452" expanded="true" signature="21037:21055" placeholder="/*order BY T..." />
+                <marker date="1441439694452" expanded="true" signature="21257:21359" placeholder="select sum(q..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="21459:21567" placeholder="select sum(q..consumption_stock..." />
+                <marker date="1441439694452" expanded="true" signature="21787:21895" placeholder="select sum(q..consumption_stock..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/View/CalenderCprs/add.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2652">
+              <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -130,43 +126,9 @@
       <file leaf-file-name="index.ctp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/View/TblConsumptionStocks/index.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.1923075" vertical-offset="417" max-vertical-offset="2822">
-              <caret line="34" column="54" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
-              <folding>
-                <marker date="1441436961888" expanded="true" signature="1200:1443" placeholder="..." />
-                <marker date="1441436961888" expanded="true" signature="1258:1443" placeholder="..." />
-                <marker date="1441436961888" expanded="true" signature="1313:1443" placeholder="..." />
-                <marker date="1441436961888" expanded="true" signature="4479:4489" placeholder="..." />
-                <marker date="1441436961888" expanded="true" signature="4479:4509" placeholder="..." />
-                <marker date="1441436961888" expanded="true" signature="5003:5701" placeholder="..." />
-                <marker date="1441436961888" expanded="true" signature="5043:5117" placeholder="..." />
-                <marker date="1441436961888" expanded="true" signature="5156:5701" placeholder="..." />
-                <marker date="1441436961888" expanded="true" signature="5448:5701" placeholder="..." />
-                <marker date="1441436961888" expanded="true" signature="5493:5701" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add.ctp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/View/TblConsumptionStocks/add.ctp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.461538" vertical-offset="77" max-vertical-offset="2040">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="8" />
-              <folding>
-                <marker date="1441425530950" expanded="true" signature="1347:1485" placeholder="..." />
-                <marker date="1441425530950" expanded="true" signature="1431:1485" placeholder="..." />
-                <marker date="1441425530950" expanded="true" signature="1900:2032" placeholder="..." />
-                <marker date="1441425530950" expanded="true" signature="1984:2032" placeholder="..." />
-                <marker date="1441425530950" expanded="true" signature="2545:2682" placeholder="..." />
-                <marker date="1441425530950" expanded="true" signature="2631:2682" placeholder="..." />
-                <marker date="1441425530950" expanded="true" signature="3213:3355" placeholder="..." />
-                <marker date="1441425530950" expanded="true" signature="3301:3355" placeholder="..." />
-                <marker date="1441425530950" expanded="true" signature="3897:4035" placeholder="..." />
-                <marker date="1441425530950" expanded="true" signature="3981:4035" placeholder="..." />
-                <marker date="1441425530950" expanded="true" signature="4826:4872" placeholder="..." />
-                <marker date="1441425530950" expanded="true" signature="4950:5004" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="417" max-vertical-offset="2822">
+              <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -186,7 +148,6 @@
       <list>
         <option value="$PROJECT_DIR$/app/Controller/BaseEmbossesController.php" />
         <option value="$PROJECT_DIR$/app/View/BaseEmbosses/index.ctp" />
-        <option value="$PROJECT_DIR$/app/View/CalenderCprs/add.ctp" />
         <option value="$PROJECT_DIR$/app/View/CalenderCprs/edit.ctp" />
         <option value="$PROJECT_DIR$/app/View/Pages/index.ctp" />
         <option value="$PROJECT_DIR$/app/Controller/PagesController.php" />
@@ -194,18 +155,19 @@
         <option value="$PROJECT_DIR$/app/View/TimeLosses/index.ctp" />
         <option value="$PROJECT_DIR$/app/View/TimeLosses/add.ctp" />
         <option value="$PROJECT_DIR$/app/View/pdf/calender_reports.ctp" />
-        <option value="$PROJECT_DIR$/app/Controller/CalenderCprsController.php" />
         <option value="$PROJECT_DIR$/app/Model/TblConsumptionStock.php" />
         <option value="$PROJECT_DIR$/app/Model/TblMaterial.php" />
         <option value="$PROJECT_DIR$/app/Config/database.php" />
         <option value="$PROJECT_DIR$/app/View/ConsumptionStocks/index.ctp" />
         <option value="$PROJECT_DIR$/app/View/TblConsumptionStocks/index.php" />
         <option value="$PROJECT_DIR$/app/View/ConsumptionStocks/add.ctp" />
-        <option value="$PROJECT_DIR$/app/View/TblConsumptionStocks/add.ctp" />
         <option value="$PROJECT_DIR$/app/Controller/ConsumptionStocksController.php" />
         <option value="$PROJECT_DIR$/app/View/TblConsumptionStocks/index.ctp" />
-        <option value="$PROJECT_DIR$/app/View/TblConsumptionStocks/edit.ctp" />
         <option value="$PROJECT_DIR$/app/Controller/TblConsumptionStocksController.php" />
+        <option value="$PROJECT_DIR$/app/View/TblConsumptionStocks/add.ctp" />
+        <option value="$PROJECT_DIR$/app/View/TblConsumptionStocks/edit.ctp" />
+        <option value="$PROJECT_DIR$/app/Controller/CalenderCprsController.php" />
+        <option value="$PROJECT_DIR$/app/View/CalenderCprs/add.ctp" />
       </list>
     </option>
   </component>
@@ -333,25 +295,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ConsumptionStocks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="polychem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="polychem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
+              <option name="myItemId" value="CalenderCprs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -370,24 +314,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="polychem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="polychem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -431,15 +357,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -459,15 +385,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16983895" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23206443" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -477,6 +402,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275862" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3994253" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -503,48 +429,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/View/Pages/index.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controller/ConsumptionStocksController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="135" column="5" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/ConsumptionStocks/index.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="109" column="54" selection-start-line="109" selection-start-column="54" selection-end-line="109" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/ConsumptionStocks/add.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="54" column="11" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Cake/Controller/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41588786" vertical-offset="0" max-vertical-offset="0">
-          <caret line="840" column="37" selection-start-line="840" selection-start-column="24" selection-end-line="840" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/BaseEmboss.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1635514" vertical-offset="0" max-vertical-offset="0">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_3.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6728972" vertical-offset="0" max-vertical-offset="0">
@@ -563,20 +447,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37383178" vertical-offset="0" max-vertical-offset="0">
           <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controller/AppController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7429907" vertical-offset="0" max-vertical-offset="0">
-          <caret line="208" column="5" selection-start-line="208" selection-start-column="5" selection-end-line="208" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/Layouts/default.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -667,24 +537,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/CalenderCprs/add.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53427064" vertical-offset="2059" max-vertical-offset="2890">
-          <caret line="139" column="184" selection-start-line="139" selection-start-column="184" selection-end-line="139" selection-end-column="184" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.04990758" vertical-offset="15137" max-vertical-offset="24565">
           <caret line="892" column="29" selection-start-line="892" selection-start-column="29" selection-end-line="892" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/Pages/index.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21616872" vertical-offset="16061" max-vertical-offset="30481">
-          <caret line="952" column="95" selection-start-line="952" selection-start-column="52" selection-end-line="952" selection-end-column="95" />
         </state>
       </provider>
     </entry>
@@ -720,13 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6713533" vertical-offset="2967" max-vertical-offset="3638">
           <caret line="197" column="0" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controller/CalenderCprsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15641476" vertical-offset="6456" max-vertical-offset="8364">
-          <caret line="385" column="5" selection-start-line="385" selection-start-column="5" selection-end-line="385" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -837,135 +686,186 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/TblConsumptionStocks/index.ctp">
+    <entry file="file://$PROJECT_DIR$/app/Config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.1923075" vertical-offset="417" max-vertical-offset="2822">
-          <caret line="34" column="54" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
-          <folding>
-            <marker date="1441436961888" expanded="true" signature="1200:1443" placeholder="..." />
-            <marker date="1441436961888" expanded="true" signature="1258:1443" placeholder="..." />
-            <marker date="1441436961888" expanded="true" signature="1313:1443" placeholder="..." />
-            <marker date="1441436961888" expanded="true" signature="4479:4489" placeholder="..." />
-            <marker date="1441436961888" expanded="true" signature="4479:4509" placeholder="..." />
-            <marker date="1441436961888" expanded="true" signature="5003:5701" placeholder="..." />
-            <marker date="1441436961888" expanded="true" signature="5043:5117" placeholder="..." />
-            <marker date="1441436961888" expanded="true" signature="5156:5701" placeholder="..." />
-            <marker date="1441436961888" expanded="true" signature="5448:5701" placeholder="..." />
-            <marker date="1441436961888" expanded="true" signature="5493:5701" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.35051546" vertical-offset="0" max-vertical-offset="714">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/TblConsumptionStocks/add.ctp">
+    <entry file="file://$PROJECT_DIR$/app/View/Layouts/MixingProducts/index.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.461538" vertical-offset="77" max-vertical-offset="2040">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="8" />
-          <folding>
-            <marker date="1441425530950" expanded="true" signature="1347:1485" placeholder="..." />
-            <marker date="1441425530950" expanded="true" signature="1431:1485" placeholder="..." />
-            <marker date="1441425530950" expanded="true" signature="1900:2032" placeholder="..." />
-            <marker date="1441425530950" expanded="true" signature="1984:2032" placeholder="..." />
-            <marker date="1441425530950" expanded="true" signature="2545:2682" placeholder="..." />
-            <marker date="1441425530950" expanded="true" signature="2631:2682" placeholder="..." />
-            <marker date="1441425530950" expanded="true" signature="3213:3355" placeholder="..." />
-            <marker date="1441425530950" expanded="true" signature="3301:3355" placeholder="..." />
-            <marker date="1441425530950" expanded="true" signature="3897:4035" placeholder="..." />
-            <marker date="1441425530950" expanded="true" signature="3981:4035" placeholder="..." />
-            <marker date="1441425530950" expanded="true" signature="4826:4872" placeholder="..." />
-            <marker date="1441425530950" expanded="true" signature="4950:5004" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.8963093" vertical-offset="0" max-vertical-offset="850">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/Layouts/ajax.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="153">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/Layouts/chart.demo.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.307693" vertical-offset="642" max-vertical-offset="1224">
+          <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/Layouts/flash.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57781756" vertical-offset="0" max-vertical-offset="559">
+          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/Layouts/pdf.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.116838485" vertical-offset="0" max-vertical-offset="582">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/Pages/index.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30579966" vertical-offset="22555" max-vertical-offset="30481">
+          <caret line="1337" column="37" selection-start-line="1337" selection-start-column="37" selection-end-line="1337" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/Layouts/default.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2759227" vertical-offset="659" max-vertical-offset="1904">
+          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controller/AppController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.69420034" vertical-offset="1900" max-vertical-offset="3400">
+          <caret line="154" column="68" selection-start-line="154" selection-start-column="62" selection-end-line="154" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/ConsumptionStocksController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.384615" vertical-offset="390" max-vertical-offset="11730">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <marker date="1441425611526" expanded="true" signature="3819:3928" placeholder="select mater..consumption_stock..." />
-            <marker date="1441425611526" expanded="true" signature="4121:4315" placeholder="update depar..." />
-            <marker date="1441425611526" expanded="true" signature="5255:5304" placeholder="select count..mixing_materials..." />
-            <marker date="1441425611526" expanded="true" signature="5555:5628" placeholder="select disti..consumption_stock..." />
-            <marker date="1441425611526" expanded="true" signature="5767:5843" placeholder="select brand..consumption_stock..." />
-            <marker date="1441425611526" expanded="true" signature="6826:7013" placeholder="select * fro..consumption_stock..." />
-            <marker date="1441425611526" expanded="true" signature="7111:7141" placeholder="select * fro..mixing_materials..." />
-            <marker date="1441425611526" expanded="true" signature="7873:7908" placeholder="delete from ..." />
-            <marker date="1441425611526" expanded="true" signature="9599:9648" placeholder="select count..mixing_materials..." />
-            <marker date="1441425611526" expanded="true" signature="9699:9772" placeholder="select disti..consumption_stock..." />
-            <marker date="1441425611526" expanded="true" signature="10237:10272" placeholder="delete from ..." />
-            <marker date="1441425611526" expanded="true" signature="10324:10394" placeholder="delete from ..." />
-            <marker date="1441425611526" expanded="true" signature="11807:11856" placeholder="select disti..consumption_stock..." />
-            <marker date="1441425611526" expanded="true" signature="12451:12499" placeholder="select dimen..dimension..." />
-            <marker date="1441425611526" expanded="true" signature="12545:12589" placeholder="select color..dimension..." />
-            <marker date="1441425611526" expanded="true" signature="13655:13709" placeholder="select disti..baseemboss..." />
-            <marker date="1441425611526" expanded="true" signature="14292:14384" placeholder="select disti..baseemboss..." />
-            <marker date="1441425611526" expanded="true" signature="14964:15033" placeholder="select disti..baseemboss..." />
-            <marker date="1441425611526" expanded="true" signature="15594:15662" placeholder="update consu..." />
-            <marker date="1441425611526" expanded="true" signature="16096:16169" placeholder="select disti..consumption_stock..." />
-            <marker date="1441425611526" expanded="true" signature="16263:16538" placeholder="SELECT mater..." />
-            <marker date="1441425611526" expanded="true" signature="16636:16905" placeholder="SELECT mater..consumption_stock..." />
-            <marker date="1441425611526" expanded="true" signature="17014:17144" placeholder="select sum(q..consumption_stock..." />
-            <marker date="1441425611526" expanded="true" signature="17254:17467" placeholder="SELECT sum(q..consumption_stock..." />
-            <marker date="1441425611526" expanded="true" signature="17804:17928" placeholder="SELECT quant..consumption_stock..." />
-            <marker date="1441425611526" expanded="true" signature="17953:17983" placeholder="SELECT * FRO..mixing_materials..." />
-            <marker date="1441425611526" expanded="true" signature="18007:18198" placeholder="SELECT B.nam..consumption_stock..." />
-            <marker date="1441425611526" expanded="false" signature="19297:19313" placeholder="..." />
-            <marker date="1441425611526" expanded="false" signature="20753:20770" placeholder="..." />
-            <marker date="1441425611526" expanded="true" signature="22494:22571" placeholder="select nepal..consumption_stock..." />
-            <marker date="1441425611526" expanded="true" signature="23528:24584" placeholder="SELECT mater..consumption_stock..." />
-            <marker date="1441425611526" expanded="true" signature="23595:24238" placeholder="SELECT sum( ..consumption_stock..." />
-            <marker date="1441425611526" expanded="true" signature="24638:24949" placeholder="SELECT sum(q..consumption_stock..." />
-            <marker date="1441425611526" expanded="true" signature="25099:25398" placeholder="SELECT sum(q..consumption_stock..." />
-          </folding>
+        <state vertical-scroll-proportion="0.21616872" vertical-offset="1084" max-vertical-offset="11730">
+          <caret line="71" column="36" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/TblConsumptionStocks/index.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="417" max-vertical-offset="2822">
+          <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/View/TblConsumptionStocks/edit.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="1717">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.5079086" vertical-offset="1020" max-vertical-offset="1802">
+          <caret line="77" column="41" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/TblConsumptionStocks/add.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59753954" vertical-offset="0" max-vertical-offset="1819">
+          <caret line="20" column="69" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/TblConsumptionStocksController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63093144" vertical-offset="474" max-vertical-offset="10098">
-          <caret line="49" column="149" selection-start-line="49" selection-start-column="149" selection-end-line="49" selection-end-column="149" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2023">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <marker date="1441437466472" expanded="true" signature="4283:4329" placeholder="SELECT * FRO..tbl_consumption_stock..." />
-            <marker date="1441437466472" expanded="true" signature="5096:5138" placeholder="delete from ..." />
-            <marker date="1441437466472" expanded="true" signature="5096:5139" placeholder="delete from ..." />
-            <marker date="1441437466472" expanded="true" signature="5454:5498" placeholder="DELETE from ..." />
-            <marker date="1441437466472" expanded="true" signature="6978:7027" placeholder="select disti..consumption_stock..." />
-            <marker date="1441437466472" expanded="true" signature="7625:7673" placeholder="select dimen..dimension..." />
-            <marker date="1441437466472" expanded="true" signature="7719:7763" placeholder="select color..dimension..." />
-            <marker date="1441437466472" expanded="true" signature="8829:8883" placeholder="select disti..baseemboss..." />
-            <marker date="1441437466472" expanded="true" signature="9466:9558" placeholder="select disti..baseemboss..." />
-            <marker date="1441437466472" expanded="true" signature="10138:10207" placeholder="select disti..baseemboss..." />
-            <marker date="1441437466472" expanded="true" signature="10765:10833" placeholder="update consu..." />
-            <marker date="1441437466472" expanded="true" signature="11267:11340" placeholder="select disti..consumption_stock..." />
-            <marker date="1441437466472" expanded="true" signature="11437:11712" placeholder="SELECT mater..." />
-            <marker date="1441437466472" expanded="true" signature="11810:12079" placeholder="SELECT mater..consumption_stock..." />
-            <marker date="1441437466472" expanded="true" signature="12188:12318" placeholder="select sum(q..consumption_stock..." />
-            <marker date="1441437466472" expanded="true" signature="12428:12641" placeholder="SELECT sum(q..consumption_stock..." />
-            <marker date="1441437466472" expanded="true" signature="12978:13102" placeholder="SELECT quant..consumption_stock..." />
-            <marker date="1441437466472" expanded="true" signature="13127:13157" placeholder="SELECT * FRO..mixing_materials..." />
-            <marker date="1441437466472" expanded="true" signature="13181:13372" placeholder="SELECT B.nam..consumption_stock..." />
-            <marker date="1441437466472" expanded="false" signature="14471:14487" placeholder="..." />
-            <marker date="1441437466472" expanded="false" signature="15927:15944" placeholder="..." />
-            <marker date="1441437466472" expanded="true" signature="17668:17745" placeholder="select nepal..consumption_stock..." />
-            <marker date="1441437466472" expanded="true" signature="18702:19424" placeholder="SELECT mater..consumption_stock..." />
-            <marker date="1441437466472" expanded="true" signature="18769:19078" placeholder="SELECT sum( ..consumption_stock..." />
-            <marker date="1441437466472" expanded="true" signature="19478:19789" placeholder="SELECT sum(q..consumption_stock..." />
-            <marker date="1441437466472" expanded="true" signature="19939:20238" placeholder="SELECT sum(q..consumption_stock..." />
-            <marker date="1441437466472" expanded="true" signature="20419:20450" placeholder="..." />
-            <marker date="1441437466472" expanded="true" signature="20819:20902" placeholder="..." />
-            <marker date="1441437466472" expanded="true" signature="20993:21082" placeholder="..." />
-            <marker date="1441437466472" expanded="true" signature="21173:21262" placeholder="..." />
-            <marker date="1441437466472" expanded="true" signature="21400:21483" placeholder="..." />
-            <marker date="1441437466472" expanded="true" signature="21584:21673" placeholder="..." />
-            <marker date="1441437466472" expanded="true" signature="21774:21863" placeholder="..." />
+            <marker date="1441439056400" expanded="true" signature="1540:1617" placeholder="select nepal..consumption_stock..." />
+            <marker date="1441439056400" expanded="true" signature="3432:3478" placeholder="SELECT * FRO..tbl_consumption_stock..." />
+            <marker date="1441439056400" expanded="true" signature="4120:4163" placeholder="delete from ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/CalenderCprs/add.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2652">
+          <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controller/CalenderCprsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5865" max-vertical-offset="8364">
+          <caret line="360" column="43" selection-start-line="360" selection-start-column="43" selection-end-line="360" selection-end-column="43" />
+          <folding>
+            <marker date="1441439694452" expanded="true" signature="535:608" placeholder="SELECT nepal..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="769:820" placeholder="select date ..." />
+            <marker date="1441439694452" expanded="true" signature="1013:1096" placeholder="select DISTI..." />
+            <marker date="1441439694452" expanded="true" signature="1227:1310" placeholder="select DISTI..." />
+            <marker date="1441439694452" expanded="true" signature="2357:2402" placeholder="SELECT sum(l..calender_cpr..." />
+            <marker date="1441439694452" expanded="true" signature="2465:2508" placeholder="SELECT sum(n..calender_cpr..." />
+            <marker date="1441439694452" expanded="true" signature="2574:2636" placeholder="SELECT sum(R..calender_cpr..." />
+            <marker date="1441439694452" expanded="true" signature="2690:2735" placeholder="SELECT * FRO..calender_scrap..." />
+            <marker date="1441439694452" expanded="true" signature="2839:2947" placeholder="SELECT sum(q..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="3005:3082" placeholder="select sum(q..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="3179:3419" placeholder="SELECT sum(q..." />
+            <marker date="1441439694452" expanded="true" signature="3527:3765" placeholder="SELECT sum(q..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="3935:4015" placeholder="SELECT date ..." />
+            <marker date="1441439694452" expanded="true" signature="4172:4288" placeholder="SELECT nepal..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="4237:4287" placeholder="SELECT max(c..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="4651:4760" placeholder="SELECT sum(q..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="4819:4897" placeholder="select sum(q..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="5037:5085" placeholder="SELECT * FRO..calender_scrap..." />
+            <marker date="1441439694452" expanded="true" signature="5182:5285" placeholder="select sum(q..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="5385:5626" placeholder="SELECT sum(q..." />
+            <marker date="1441439694452" expanded="true" signature="5734:5973" placeholder="SELECT sum(q..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="6129:6194" placeholder="SELECT sum(l..calender_cpr..." />
+            <marker date="1441439694452" expanded="true" signature="6257:6320" placeholder="SELECT sum(n..calender_cpr..." />
+            <marker date="1441439694452" expanded="true" signature="6383:6465" placeholder="SELECT sum(R..calender_cpr..." />
+            <marker date="1441439694452" expanded="true" signature="6585:6665" placeholder="SELECT date ..." />
+            <marker date="1441439694452" expanded="true" signature="6822:6938" placeholder="SELECT nepal..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="6887:6937" placeholder="SELECT max(c..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="8040:8081" placeholder="update consu..." />
+            <marker date="1441439694452" expanded="true" signature="11276:11342" placeholder="select disti..base..." />
+            <marker date="1441439694452" expanded="true" signature="11824:11894" placeholder="select disti..base..." />
+            <marker date="1441439694452" expanded="true" signature="12411:12484" placeholder="select disti..baseemboss..." />
+            <marker date="1441439694452" expanded="true" signature="12861:12934" placeholder="select disti..BaseEmboss..." />
+            <marker date="1441439694452" expanded="true" signature="13256:13329" placeholder="select disti..BaseEmboss..." />
+            <marker date="1441439694452" expanded="true" signature="13659:13732" placeholder="select disti..BaseEmboss..." />
+            <marker date="1441439694452" expanded="true" signature="14069:14142" placeholder="select disti..BaseEmboss..." />
+            <marker date="1441439694452" expanded="true" signature="14656:14733" placeholder="SELECT nepal..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="15003:15079" placeholder="select sum(q..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="15207:15253" placeholder="SELECT * FRO..calender_scrap..." />
+            <marker date="1441439694452" expanded="true" signature="15342:15443" placeholder="select sum(q..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="15535:15774" placeholder="SELECT sum(q..." />
+            <marker date="1441439694452" expanded="true" signature="15874:16111" placeholder="SELECT sum(q..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="16315:16392" placeholder="SELECT nepal..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="16552:17153" placeholder="SELECT disti..BaseEmboss..." />
+            <marker date="1441439694452" expanded="true" signature="17348:17374" placeholder="select * fro..calender_cpr..." />
+            <marker date="1441439694452" expanded="true" signature="18314:18554" placeholder="SELECT sum(q..." />
+            <marker date="1441439694452" expanded="true" signature="18648:18725" placeholder="select sum(q..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="18820:19058" placeholder="SELECT sum(q..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="19194:19238" placeholder="select *from..calender_cpr..." />
+            <marker date="1441439694452" expanded="true" signature="19319:19415" placeholder="select sum(l..calender_cpr..." />
+            <marker date="1441439694452" expanded="true" signature="19541:19649" placeholder="select sum(l..calender_cpr..." />
+            <marker date="1441439694452" expanded="true" signature="19779:19886" placeholder="select sum(l..calender_cpr..." />
+            <marker date="1441439694452" expanded="true" signature="20056:20102" placeholder="select *from..calender_scrap..." />
+            <marker date="1441439694452" expanded="true" signature="20225:20316" placeholder="select * fro..time_loss..." />
+            <marker date="1441439694452" expanded="true" signature="20558:20674" placeholder="SELECT SUM(t..time_loss..." />
+            <marker date="1441439694452" expanded="true" signature="20675:20693" placeholder="/*order BY T..." />
+            <marker date="1441439694452" expanded="true" signature="20920:21036" placeholder="SELECT SUM(t..time_loss..." />
+            <marker date="1441439694452" expanded="true" signature="21037:21055" placeholder="/*order BY T..." />
+            <marker date="1441439694452" expanded="true" signature="21257:21359" placeholder="select sum(q..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="21459:21567" placeholder="select sum(q..consumption_stock..." />
+            <marker date="1441439694452" expanded="true" signature="21787:21895" placeholder="select sum(q..consumption_stock..." />
           </folding>
         </state>
       </provider>

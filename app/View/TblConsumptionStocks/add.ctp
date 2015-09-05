@@ -1,19 +1,6 @@
 <script>
     $(document).ready(function () {
-        var value = '';
         $('.nepali-calendar').nepaliDatePicker();
-        // Trigger On change/Selected event
-        $.onChangeDatepicker_Ravindra = function (selectedDate) {
-            value = $("#nepali-calendar").val();
-            $('.nepalidatepicker').val(value);
-        }
-    });
-
-    // brand change function
-    $(document).ready(function(){
-        $('#brand').on('change',function(){
-            //TODO::$.post
-        })
     });
 </script>
 
