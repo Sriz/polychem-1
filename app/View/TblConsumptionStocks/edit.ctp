@@ -1,5 +1,8 @@
 <div class="container">
     <div class="row">
+        <?=$this->Html->link('List items', array('action' => 'index'),['class'=>'btn btn-primary pull-right']);?>
+        <br><br>
+
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
                 <div class="panel-heading">

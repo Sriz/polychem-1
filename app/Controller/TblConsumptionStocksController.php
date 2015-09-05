@@ -27,7 +27,7 @@ class TblConsumptionStocksController extends AppController
         $this->loadModel('TblConsumptionStock');
         // Custom pagination
         $pagination = new stdClass();
-        $pagination->limit = 4;
+        $pagination->limit = 7;
         $pagination->currentPage = isset($_GET['page_id'])?$_GET['page_id']<=0?1:$_GET['page_id']:1;
         $pagination->offset =($pagination->currentPage-1)*$pagination->limit;
 
@@ -46,7 +46,8 @@ class TblConsumptionStocksController extends AppController
                 $material_lists = $this->MixingMaterial->find('all');
             }
         } else {
-            $consumptions = $this->TblConsumptionStock->find('all', ['offset'=>$pagination->offset, 'limit' => $pagination->limit]);
+            //'order' => array('Model.created', 'Model.field3 DESC'),
+            $consumptions = $this->TblConsumptionStock->find('all', ['offset'=>$pagination->offset, 'limit' => $pagination->limit, 'order'=>['id DESC']]);
             $material_lists = $this->MixingMaterial->find('all');
             $pagination->totalPage = ceil(count($this->TblConsumptionStock->find('all'))/$pagination->limit);
         }
