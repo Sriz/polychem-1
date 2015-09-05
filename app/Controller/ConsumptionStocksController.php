@@ -234,13 +234,10 @@ class ConsumptionStocksController extends AppController
     public function delete($id = null)
     {
         $this->ConsumptionStock->id = $id;
-
-
         $this->loadModel('MixingMaterial');
         $this->loadModel('CalenderCpr');
         $this->loadModel('ConsumptionStock');
         $count = $this->MixingMaterial->query("select count(name) as total from mixing_materials");
-
         $uid = $this->ConsumptionStock->query("select distinct(uid) as uid from consumption_stock where consumption_id= $id ");
         //print_r($uid);exit;
         $mid = $uid[0]['consumption_stock']['uid'];

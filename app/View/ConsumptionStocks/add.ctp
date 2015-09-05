@@ -117,6 +117,7 @@
 
     function brandchange() {
         var x = document.getElementsByClassName('brand');
+        //console.log(x.length);
         for (i = 0; i < x.length; i++) {
             var e = document.getElementById("brand");
             var strUser = e.options[e.selectedIndex].text;

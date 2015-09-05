@@ -6,140 +6,156 @@
 print_r($consumptions);
 print_r($material_lists);
 exit;*/
-
 ?>
+<script>
+    $(document).ready(function () {
+        $('.nepaliDatePicker').nepaliDatePicker();
+    });
+</script>
+<?= $this->Html->link('Add New Consumption Item', array('action' => 'add'), ['class' => 'btn btn-primary pull-right']); ?>
+<br><br>
 
 <div class="container">
     <div class="row">
+        <?=$this->Form->create(null, array(array('controller' => 'TblConsumptionStock', 'action' => 'index'),'type'=>'get'));?>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control nepaliDatePicker" id="nepaliDatePicker"
+                           autocomplete="off" value="<?= isset($_GET['q']) ? $_GET['q'] : ''; ?>"
+                           placeholder="Search for...">
+                  <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i>
+                        </button>
+                  </span>
+                </div>
+            </div>
+            <div class="col-md-6 pull-right">
+                <!-- pagination -->
+                <nav>
+                    <ul class="pagination pull-right">
+                        <?php if($pagination->currentPage-1>=1):?>
+                            <li><a href="<?=$this->Html->url(null,true).(isset($_GET['q'])?'?q='.$_GET['q'].'&page_id='.($pagination->currentPage-1):'?page_id='.($pagination->currentPage-1));?>" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                        <?php endif;?>
+
+                        <!-- first page -->
+                        <?php if($pagination->currentPage>1):?>
+                            <li><a href="<?=$this->Html->url(null,true).(isset($_GET['q'])?'?q='.$_GET['q'].'&page_id=1':'?page_id=1'); ?>">1</a></li>
+                        <?php endif;?>
+                        <!-- end first page -->
+                        <?php if($pagination->currentPage>3):?>
+                            <li><a href="#">...</a> </li>
+                        <?php endif;?>
+
+                        <?php if(2<$pagination->currentPage):?>
+                            <li><a href="<?=$this->Html->url(null,true).(isset($_GET['q'])?'?q='.$_GET['q'].'&page_id='.($pagination->currentPage-1):'?page_id='.($pagination->currentPage-1)); ?>"><?=$pagination->currentPage-1;?></a></li>
+                        <?php endif;?>
+                        <!-- current page -->
+                        <?php if($pagination->totalPage!=1):?>
+                        <li class="<?=isset($_GET['page_id'])==1?'active':'';?>"><a href="<?=$this->Html->url(null,true).(isset($_GET['q'])?'?q='.$_GET['q'].'&page_id='.$pagination->currentPage:'?page_id='.$pagination->currentPage); ?>"><?=$pagination->currentPage;?></a></li>
+                        <?php endif;?>
+                        <!-- end current page -->
+
+                        <?php if($pagination->totalPage>$pagination->currentPage+1):?>
+                            <li><a href="<?=$this->Html->url(null,true).(isset($_GET['q'])?'?q='.$_GET['q'].'&page_id='.($pagination->currentPage+1):'?page_id='.($pagination->currentPage+1)); ?>"><?=$pagination->currentPage+1;?></a></li>
+                        <?php endif;?>
+
+                        <?php if($pagination->totalPage>$pagination->currentPage+2):?>
+                            <li><a href="<?=$this->Html->url(null,true).(isset($_GET['q'])?'?q='.$_GET['q'].'&page_id='.($pagination->currentPage+2):'?page_id='.($pagination->currentPage+2)); ?>"><?=$pagination->currentPage+2;?></a></li>
+                        <?php endif;?>
+
+                        <?php if($pagination->totalPage-3>=$pagination->currentPage):?>
+                            <li><a href="#">...</a> </li>
+                        <?php endif;?>
+
+                        <!-- last page -->
+                        <?php if($pagination->currentPage!=$pagination->totalPage):?>
+                            <li><a href="<?=$this->Html->url(null,true).(isset($_GET['q'])?'?q='.$_GET['q'].'&page_id='.$pagination->totalPage:'?page_id='.$pagination->totalPage); ?>"><?=$pagination->totalPage;?></a></li>
+                        <?php endif;?>
+                        <!-- end last page -->
+
+                        <?php if($pagination->currentPage<$pagination->totalPage):?>
+                        <li><a href="<?=$this->Html->url(null,true).(isset($_GET['q'])?'?q='.$_GET['q'].'&page_id='.($pagination->currentPage+1):'?page_id='.($pagination->currentPage+1)); ?>" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                        <?php endif;?>
+                    </ul>
+                </nav>
+                <!-- end pagination -->
+            </div>
+        </form>
+        <!-- /input-group -->
+        <br><br><br>
+
+        <div class="clearfix"></div>
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <p class="text-center">Consumption</p>
             </div>
             <div class="panel-footer">
-
-                <table class="table table-bordered table-hover">
-                    <tr  class="success">
-                        <td>Actions</td>
-                        <?php for($i=0; $i<5; $i++):?>
-                        <td class="text-center"><?=$this->Html->link('Edit', array('action' => 'edit',$consumptions[$i]['TblConsumptionStock']['id'])); ?>  ||  <?=$this->Html->link('Delete', array('action' => 'delete',$consumptions[$i]['TblConsumptionStock']['id'])); ?>  </td>
-                        <?php endfor;?>
-                    </tr>
-                    <tr class="success">
-                        <td>Nepalidate</td>
-                        <?php for($i=0; $i<5; $i++):?>
-                        <td><?=$consumptions[$i]['TblConsumptionStock']['nepalidate'];?></td>
-                        <?php endfor;?>
-                    </tr>
-                    <tr class="success">
-                        <td>Shift</td>
-                        <?php for($i=0; $i<5; $i++):?>
-                            <td><?=$consumptions[$i]['TblConsumptionStock']['shift'];?></td>
-                        <?php endfor;?>
-                    </tr>
-                    <tr class="success">
-                        <td>Brand</td>
-                        <?php for($i=0; $i<5; $i++):?>
-                            <td><?=$consumptions[$i]['TblConsumptionStock']['brand'];?></td>
-                        <?php endfor;?>
-                    </tr>
-                    <tr class="success">
-                        <td>Quality</td>
-                        <?php for($i=0; $i<5; $i++):?>
-                            <td><?=$consumptions[$i]['TblConsumptionStock']['quality'];?></td>
-                        <?php endfor;?>
-                    </tr>
-                    <tr class="success">
-                        <td>Color</td>
-                        <?php for($i=0; $i<5; $i++):?>
-                            <td><?=$consumptions[$i]['TblConsumptionStock']['color'];?></td>
-                        <?php endfor;?>
-                    </tr>
-                    <tr class="success">
-                        <td>Dimension</td>
-                        <?php for($i=0; $i<5; $i++):?>
-                            <td><?=$consumptions[$i]['TblConsumptionStock']['dimension'];?></td>
-                        <?php endfor;?>
-                    </tr>
-                    <?php foreach($material_lists as $m):?>
-                        <tr>
-                            <td class="success"><?=$m['MixingMaterial']['name'];?></td>
-                            <?php for($i=0; $i<5; $i++):?>
-                            <td>
-                                <?php
-                                    $materials = json_decode($consumptions[$i]['TblConsumptionStock']['materials']);
-                                    echo isset($materials->$m['MixingMaterial']['id'])?$materials->$m['MixingMaterial']['id']?$materials->$m['MixingMaterial']['id']:0:0;
-                                ?>
-                            </td>
-                            <?php endfor;?>
+                <?php
+                // if there is no data, echo custom message
+                if (!count($consumptions)):
+                    echo "<h2>NO Data Exists</h2>";
+                else:
+                    ?>
+                    <table class="table table-bordered table-hover">
+                        <tr class="success">
+                            <td>Actions</td>
+                            <?php for ($i = 0; $i < count($consumptions); $i++): ?>
+                                <td class="text-center"><?= $this->Html->link('Edit', array('action' => 'edit', $consumptions[$i]['TblConsumptionStock']['id'])); ?>
+                                    ||  <?php echo $this->Html->link('Delete', array('action' => 'delete', $consumptions[$i]['TblConsumptionStock']['id']), array('confirm' => 'Are you sure you wish to delete this item? This can\'t undone')); ?>  </td>
+                            <?php endfor; ?>
                         </tr>
-                    <?php endforeach;?>
-                </table>
+                        <tr class="success">
+                            <td>Nepalidate</td>
+                            <?php for ($i = 0; $i < count($consumptions); $i++): ?>
+                                <td><?= $consumptions[$i]['TblConsumptionStock']['nepalidate']; ?></td>
+                            <?php endfor; ?>
+                        </tr>
+                        <tr class="success">
+                            <td>Shift</td>
+                            <?php for ($i = 0; $i < count($consumptions); $i++): ?>
+                                <td><?= $consumptions[$i]['TblConsumptionStock']['shift']; ?></td>
+                            <?php endfor; ?>
+                        </tr>
+                        <tr class="success">
+                            <td>Brand</td>
+                            <?php for ($i = 0; $i < count($consumptions); $i++): ?>
+                                <td><?= $consumptions[$i]['TblConsumptionStock']['brand']; ?></td>
+                            <?php endfor; ?>
+                        </tr>
+                        <tr class="success">
+                            <td>Quality</td>
+                            <?php for ($i = 0; $i < count($consumptions); $i++): ?>
+                                <td><?= $consumptions[$i]['TblConsumptionStock']['quality']; ?></td>
+                            <?php endfor; ?>
+                        </tr>
+                        <tr class="success">
+                            <td>Color</td>
+                            <?php for ($i = 0; $i < count($consumptions); $i++): ?>
+                                <td><?= $consumptions[$i]['TblConsumptionStock']['color']; ?></td>
+                            <?php endfor; ?>
+                        </tr>
+                        <tr class="success">
+                            <td>Dimension</td>
+                            <?php for ($i = 0; $i < count($consumptions); $i++): ?>
+                                <td><?= $consumptions[$i]['TblConsumptionStock']['dimension']; ?></td>
+                            <?php endfor; ?>
+                        </tr>
+                        <?php foreach ($material_lists as $m): ?>
+                            <tr>
+                                <td class="success"><?= $m['MixingMaterial']['name']; ?></td>
+                                <?php for ($i = 0; $i < count($consumptions); $i++): ?>
+                                    <td>
+                                        <?php
+                                        $materials = json_decode($consumptions[$i]['TblConsumptionStock']['materials']);
+                                        echo isset($materials->$m['MixingMaterial']['id']) ? $materials->$m['MixingMaterial']['id'] ? $materials->$m['MixingMaterial']['id'] : 0 : 0;
+                                        ?>
+                                    </td>
+                                <?php endfor; ?>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>
+                <?php endif;//end if no data exists ?>
             </div>
         </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<br><hr>
-<br>
-<h2>Table Format 2</h2>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 pull-left">
-            <table class="table">
-                <tr><td>Action</td></tr>
-                <tr><td>Nepalidate</td></tr>
-                <tr><td>Shift</td></tr>
-                <tr><td>Brand</td></tr>
-                <tr><td>Quality</td></tr>
-                <tr><td>Color</td></tr>
-                <tr><td>Dimension</td></tr>
-                <?php foreach($material_lists as $m):?>
-                    <tr><td><?=$m['MixingMaterial']['name'];?></td></tr>
-                <?php endforeach;?>
-            </table>
-        </div>
-            <?php foreach ($consumptions as $c): ?>
-                <div class="col-md-2 pull-left">
-                <table class="table">
-                    <tr><td class="text-center"><a href="#"><i class="glyphicon glyphicon-edit"> </i></a> | <a href="#"><i class="glyphicon glyphicon-trash"> </i></a> </td></tr>
-                    <tr>
-                        <td><?= $c['TblConsumptionStock']['nepalidate']; ?></td>
-                    </tr>
-                    <tr>
-                        <td><?= $c['TblConsumptionStock']['shift']; ?></td>
-                    </tr>
-                    <tr>
-                        <td><?= $c['TblConsumptionStock']['brand']; ?></td>
-                    </tr>
-                    <tr>
-                        <td><?= $c['TblConsumptionStock']['quality']; ?></td>
-                    </tr>
-                    <tr>
-                        <td><?= $c['TblConsumptionStock']['color']; ?></td>
-                    </tr>
-                    <tr>
-                        <td><?= $c['TblConsumptionStock']['dimension']; ?></td>
-                    </tr>
-                    <?php $materials = json_decode($c['TblConsumptionStock']['materials']); ?>
-                    <?php foreach ($materials as $key => $m): ?>
-                        <tr>
-                            <td><?=$m?$m:'0';?></td>
-                        </tr>
-                    <?php endforeach; ?>
-
-                </table>
-        </div>
-            <?php endforeach; ?>
-
     </div>
 </div>
