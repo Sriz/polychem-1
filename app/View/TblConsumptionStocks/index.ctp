@@ -153,6 +153,21 @@ exit;*/
                                 <?php endfor; ?>
                             </tr>
                         <?php endforeach; ?>
+                        <tr class="success">
+                            <td>Total :</td>
+                            <?php for ($i = 0; $i < count($consumptions); $i++): ?>
+                                <td>
+                                    <?php
+                                    $total = 0;
+                                    $material = json_decode($consumptions[$i]['TblConsumptionStock']['materials']);
+                                    foreach($material_lists as $m):
+                                        $total += $material->$m['MixingMaterial']['id'];
+                                    endforeach;
+                                    echo $total;
+                                    ?>
+                                </td>
+                            <?php endfor; ?>
+                        </tr>
                     </table>
                 <?php endif;//end if no data exists ?>
             </div>
