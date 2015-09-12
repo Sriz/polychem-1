@@ -10,10 +10,7 @@
         }
 
     });
-</script>
 
-
-<script type="text/javascript">
 
     var itsclicked = true;
     function test() {

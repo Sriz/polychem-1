@@ -48,9 +48,40 @@ class TblConsumptionStocksController extends AppController
         $this->set('material_lists', isset($material_lists)?$material_lists:null);
     }
 
+public function t()
+    {
+         if($this->request->is('ajax'))
+        {
+            
+            $this->request->onlyAllow('ajax');
+            $this->loadModel('BaseEmboss');
+            $d=$this->request->data['id'];
+            $type=$this->BaseEmboss->query("select distinct(Type) from BaseEmboss where Brand='$d'");
+
+            echo '<option value="null">Please select</option>';
+             foreach($type as $t):
+             
+            echo '<option value="'.$t['BaseEmboss']['Type'].'">'.$t['BaseEmboss']['Type'].'</option>';
+             
+             endforeach;
+            
+            
+            
+        }
+    
+    }
 
     public function add()
     {
+        $this->loadModel('BaseEmboss');
+        $brand=$this->BaseEmboss->find('list',array('fields'=>array('Brand','Brand'),'order'=>'Brand','group'=>'Brand'));
+        $dimensions=$this->BaseEmboss->find('list',array('fields'=>array('Dimension','Dimension'),'order'=>'Dimension','group'=>'Dimension'));
+        $this->set('brand',$brand);
+        $this->set('dimensions',$dimensions);
+        //print_r($dimensions);die;
+        //SELECT distinct Dimension FROM `baseemboss` order by Dimension ASC
+
+
         if ($this->request->is('post')) {
 
             $data = $this->request->data;
@@ -110,5 +141,53 @@ class TblConsumptionStocksController extends AppController
             $this->Session->setFlash(__('The consumption stock could not be deleted. Please, try again.'));
         }
         return $this->redirect(array('action' => 'index'));
+    }
+
+
+     public function dimension()
+    {
+         if($this->request->is('ajax'))
+        {
+            
+            $this->request->onlyAllow('ajax');
+            $this->loadModel('BaseEmboss');
+            $d=$this->request->data['id'];
+             $c=$this->request->data['type'];
+             $type=$this->BaseEmboss->query("select distinct(Dimension) from BaseEmboss where Brand='$c' and Type='$d' order by Dimension");
+              echo '<option value="null">Please select</option>';
+             foreach($type as $t):
+             
+            echo '<option value="'.$t['BaseEmboss']['Dimension'].'">'.$t['BaseEmboss']['Dimension'].'</option>';
+             
+             endforeach;
+            
+            
+            
+        }
+    
+    }
+    
+    public function color()
+    {
+         if($this->request->is('ajax'))
+        {
+            
+            $this->request->onlyAllow('ajax');
+            $this->loadModel('BaseEmboss');
+            $d=$this->request->data['id'];
+               $c=$this->request->data['type'];
+             $type=$this->BaseEmboss->query("select distinct(Color) from BaseEmboss where Brand='$c' and Type='$d'");
+              echo '<option value="null">Please select</option>';
+              
+             foreach($type as $t):
+             
+            echo '<option value="'.$t['BaseEmboss']['Color'].'">'.$t['BaseEmboss']['Color'].'</option>';
+                
+             endforeach;
+            
+            
+            
+        }
+    
     }
 }

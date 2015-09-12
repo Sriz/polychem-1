@@ -1,13 +1,5 @@
-<script>
-    $(document).ready(function () {
-        $('.nepali-calendar').nepaliDatePicker();
-    });
-</script>
 <div class="container">
     <div class="row">
-        <?=$this->Html->link('List items', array('action' => 'index'),['class'=>'btn btn-primary pull-right']);?>
-        <br><br>
-
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -18,12 +10,12 @@
                         <form action="" method="post">
                         <tr>
                             <td>Nepalidate</td>
-                            <td><input id="nepali-calendar" required="required" class="form-control nepali-calendar" type="text" value="<?=$consumption[0]['tbl_consumption_stock']['nepalidate']?$consumption[0]['tbl_consumption_stock']['nepalidate']:0;?>" name="nepalidate"></td>
+                            <td><input class="form-control" type="text" value="<?=$consumption[0]['tbl_consumption_stock']['nepalidate']?$consumption[0]['tbl_consumption_stock']['nepalidate']:0;?>" name="nepalidate"></td>
                         </tr>
                         <tr>
                             <td>Shift</td>
                             <td>
-                                <select required="required" class="form-control" name="shift">
+                                <select class="form-control" name="shift">
                                     <option>--Choose One--</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -33,7 +25,7 @@
                         <tr>
                             <td>Brand</td>
                             <td>
-                                <select required="required" class="form-control" name="brand">
+                                <select class="form-control" name="brand">
                                     <option>--Choose One--</option>
                                     <option value="ABC">ABC</option>
                                     <option value="DEF">DEF</option>
@@ -44,7 +36,7 @@
                         <tr>
                             <td>Quality</td>
                             <td>
-                                <select required="required" class="form-control" name="quality">
+                                <select class="form-control" name="quality">
                                     <option>--Choose One--</option>
                                     <option value="quality1">quality1</option>
                                     <option value="quality2">quality2</option>
@@ -55,7 +47,7 @@
                         <tr>
                             <td>Dimension</td>
                             <td>
-                                <select required="required" class="form-control" name="dimension">
+                                <select class="form-control" name="dimension">
                                     <option>--Choose One--</option>
                                     <option value="Dimension1">Dimension1</option>
                                     <option value="Dimension2">Dimension2</option>
@@ -66,7 +58,7 @@
                         <tr>
                             <td>Color</td>
                             <td>
-                                <select required="required" class="form-control" name="color">
+                                <select class="form-control" name="color">
                                     <option>--Choose One--</option>
                                     <option value="White">White</option>
                                     <option value="Black">Black</option>
