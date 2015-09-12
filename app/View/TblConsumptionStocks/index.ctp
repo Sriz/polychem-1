@@ -30,6 +30,7 @@ exit;*/
                 </div>
             </div>
             <div class="col-md-6 pull-right">
+
                 <!-- pagination -->
                 <nav>
                     <ul class="pagination pull-right">
@@ -79,6 +80,7 @@ exit;*/
                     </ul>
                 </nav>
                 <!-- end pagination -->
+
             </div>
         </form>
         <!-- /input-group -->

@@ -24,143 +24,65 @@ class CalenderCprsController extends AppController
      */
     public function index()
     {
-        $date1 = 0;
-        $this->loadModel('ConsumptionStock');
-        $d = $this->ConsumptionStock->query("SELECT nepalidate from consumption_stock order by nepalidate desc limit 1");
-        foreach ($d as $dt):
-            $date = $dt['consumption_stock']['nepalidate'];
-        endforeach;
-        $scrapdate = $this->CalenderCpr->query("select date from calender_cpr order by date limit 1 ");
-        $sc = isset($scrapdate[0]['calender_cpr']['date'])?$scrapdate[0]['calender_cpr']['date']:'NO-DATE';
-        $this->set('scd', $sc);
+        $this->loadModel('TblConsumptionStock');
+        $this->loadModel('MixingMaterials');
 
-        $count=$this->ConsumptionStock->query("select DISTINCT(count(nepalidate)) as count from consumption_stock where inserted=0");
-        $this->set('ct',$count);
+        $lastDate = $this->TblConsumptionStock->query("SELECT nepalidate from tbl_consumption_stock order by nepalidate desc limit 1")[0]['tbl_consumption_stock']['nepalidate'];
+        $newItemAdded = $this->TblConsumptionStock->query("select DISTINCT(count(nepalidate)) as count from tbl_consumption_stock where nepalidate='$lastDate' AND length IS  null and ntwt IS NULL")[0][0]['count'];
+        $material_lists = $this->MixingMaterials->query("select * from mixing_materials");
 
-        $this->loadModel('ConsumptionStock');
-        $count=$this->ConsumptionStock->query("select DISTINCT(count(nepalidate)) as count from consumption_stock where inserted=0");
-        $this->set('ct',$count);
+        // Custom pagination
+        $pagination = new stdClass();
+        $pagination->limit = 20;
+        $pagination->currentPage = isset($_GET['page_id'])?$_GET['page_id']<=0?1:$_GET['page_id']:1;
+        $pagination->offset =($pagination->currentPage-1)*$pagination->limit;
 
-        $this->Filter->addFilters(
-            array(
-                'filter1' => array(
-                    'CalenderCpr.date' => array('operator' => 'LIKE',
-                        'value' => array(
-                            'before' => '%', // optional
-                            'after' => '%'  // optional
-                        )
-                    )
-                )
-            )
-        );
-        $this->total();
+        $searchDate = isset($_GET['search'])?$_GET['search']:null;
+        if ($searchDate):
+            $consumptionItems = $this->TblConsumptionStock->query("select * from tbl_consumption_stock where nepalidate = '$searchDate' and length is NOT  NULL  and ntwt is not NULL limit $pagination->offset, $pagination->limit");
+            $pagination->totalPage = ceil(count($this->TblConsumptionStock->query("select * from tbl_consumption_stock where nepalidate = '$searchDate' and length is NOT  NULL  and ntwt is not NULL"))/$pagination->limit);
+            $lengthTotal = $this->TblConsumptionStock->query("SELECT sum(length) as sum from tbl_consumption_stock where nepalidate = '$searchDate'")[0][0]['sum'];
+            $ntwtTotal = $this->TblConsumptionStock->query("select sum(ntwt) as sum from tbl_consumption_stock where nepalidate = '$searchDate'")[0][0]['sum'];
+            $totalMaterials = $this->TblConsumptionStock->query("SELECT materials from tbl_consumption_stock where nepalidate = '$searchDate'");
+        else:
+            $consumptionItems = $this->TblConsumptionStock->query("select * from tbl_consumption_stock where length is NOT  NULL  and ntwt is not NULL ORDER  BY  nepalidate desc limit $pagination->offset, $pagination->limit");
+            $pagination->totalPage = ceil(count($this->TblConsumptionStock->query("select * from tbl_consumption_stock where length is NOT  NULL  and ntwt is not NULL"))/$pagination->limit);
+            $lengthTotal = $this->TblConsumptionStock->query("SELECT sum(length) as sum from tbl_consumption_stock")[0][0]['sum'];
+            $ntwtTotal = $this->TblConsumptionStock->query("select sum(ntwt) as sum from tbl_consumption_stock")[0][0]['sum'];
+            $totalMaterials = $this->TblConsumptionStock->query("SELECT materials from tbl_consumption_stock");
+        endif;
 
-        $this->Filter->setPaginate('order', 'CalenderCpr.date DESC'); // optional
-        $this->Filter->setPaginate('limit',20);              // optional
-
-        // Define conditions
-        $this->Filter->setPaginate('conditions', $this->Filter->getConditions());
-        $this->set('calenderCprs', $this->paginate());
-        if (isset($this->request->data['filter']['filter1'])) {
-            $date1 = $this->request->data['filter']['filter1'];
-        }
-
-        if ($date1 == 0) {
-            //echo $date;exit;
-            $this->set('netwt', $this->CalenderCpr->query("SELECT sum(length) as total FROM calender_cpr"));
-            $this->set('leng', $this->CalenderCpr->query("SELECT sum(ntwt) as total FROM calender_cpr "));
-
-
-            $this->set('mxwt', $this->CalenderCpr->query("SELECT sum(REPLACE(total, ',', '')) as total FROM calender_cpr "));
-            $sps = $this->CalenderScrap->query("SELECT * FROM calender_scrap where date='$sc'");
-            $this->set('scraps', $sps);
-            $this->set('du',$this->ConsumptionStock->query("SELECT sum(quantity) as total FROM consumption_stock WHERE material_id='Bought Scrap' and nepalidate='$date'"));
-            $query = $this->ConsumptionStock->query("select sum(quantity) as total from consumption_stock where nepalidate='$date'");
-            $this->set('total', $query);
-            $raws = $this->ConsumptionStock->query("SELECT sum(quantity) as sum from consumption_stock where material_id!='Scrap Unprinted' and material_id !='Scrap Laminated' and material_id !='Scrap Printed' and material_id !='Scrap Plain' and material_id!='Scrap CT' and nepalidate='$date'");
-            $this->set('mixingraws', $raws);
-
-            $totalscrap = $this->ConsumptionStock->query("SELECT sum(quantity) as scrap_total from consumption_stock where (material_id='Scrap Laminated' or material_id='Scrap Plain' or material_id='Scrap Printed' or material_id='Scrap Unprinted' or material_id='Scrap CT') and nepalidate='$date'");
-            $this->set("scraptotal", $totalscrap);
-
-            //for add and edit btn enable/disable
-            $date_calender_scrap = $this->CalenderScrap->query("SELECT date from calender_scrap WHERE id = (SELECT  max(id) FROM calender_scrap)");
-            $date_calender_scrap = $date_calender_scrap[0]['calender_scrap']['date'];
-            $date_consumption_scrap = $this->CalenderScrap->query("SELECT nepalidate from consumption_stock WHERE consumption_id = (SELECT  max(consumption_id) FROM consumption_stock)");
-            $date_consumption_scrap = $date_consumption_scrap [0]['consumption_stock']['nepalidate'];
-            $this->set('date_calender', $date_calender_scrap);
-            $this->set('date_consumption', $date_consumption_scrap);
-        }
-        else
-        {
-//            echo $date1;exit;
-            $this->set('du',$this->ConsumptionStock->query("SELECT sum(quantity) as total FROM consumption_stock WHERE material_id='Bought Scrap' and nepalidate='$date1'"));
-
-            $query = $this->ConsumptionStock->query("select sum(quantity) as total from consumption_stock where nepalidate='$date1'");
-            $this->set('total', $query);
-            $this->loadModel('CalenderScrap');
-            $sps = $this->CalenderScrap->query("SELECT * FROM calender_scrap where date='$date1'");
-            $this->set('scraps', $sps);
-
-            $dana = $this->ConsumptionStock->query("select sum(quantity) as totdana from consumption_stock where material_id='DANA' and nepalidate='$date1'");
-            $this->set('danaused', $dana);
-
-            $raws = $this->ConsumptionStock->query("SELECT sum(quantity) as sum from consumption_stock where material_id!='Scrap Unprinted' and material_id !='Scrap Laminated' and material_id !='Scrap Printed' and material_id !='Scrap Plain' and material_id!='Scrap CT' and nepalidate='$date1'");
-            $this->set('mixingraws', $raws);
-
-            $totalscrap = $this->ConsumptionStock->query("SELECT sum(quantity) as scrap_total from consumption_stock where (material_id='Scrap Laminated' or material_id='Scrap Plain' or material_id='Scrap Printed' or material_id='Scrap Unprinted' or material_id='Scrap CT') and nepalidate='$date1'");
-            $this->set("scraptotal", $totalscrap);
-            //$date=$this->request->data;
-            $this->set('netwt', $this->CalenderCpr->query("SELECT sum(length) as total FROM calender_cpr where date='$date1'"));
-            $this->set('leng', $this->CalenderCpr->query("SELECT sum(ntwt) as total FROM calender_cpr where date='$date1'"));
-            $this->set('mxwt', $this->CalenderCpr->query("SELECT sum(REPLACE(total, ',', '')) as total FROM calender_cpr where date='$date1'"));
-
-            //for add and edit btn enable/disable
-            $date_calender_scrap = $this->CalenderScrap->query("SELECT date from calender_scrap WHERE id = (SELECT  max(id) FROM calender_scrap)");
-            $date_calender_scrap = $date_calender_scrap[0]['calender_scrap']['date'];
-            $date_consumption_scrap = $this->CalenderScrap->query("SELECT nepalidate from consumption_stock WHERE consumption_id = (SELECT  max(consumption_id) FROM consumption_stock)");
-            $date_consumption_scrap = $date_consumption_scrap [0]['consumption_stock']['nepalidate'];
-            $this->set('date_calender', $date_calender_scrap);
-            $this->set('date_consumption', $date_consumption_scrap);
-        }
-
+        //send to view
+        $this->set('lastDate',$lastDate);
+        $this->set('newItemAdded',$newItemAdded);
+        $this->set('lengthTotal', $lengthTotal);
+        $this->set('ntwtTotal', $ntwtTotal);
+        $this->set('consumptionItems', $consumptionItems);
+        $this->set('material_lists', $material_lists);
+        $this->set('totalMaterials', $totalMaterials);
+        $this->set('pagination', $pagination);
     }
-
-    /**
-     * view method
-     *
-     * @throws NotFoundException
-     * @param string $id
-     * @return void
-     */
-    public function view($id = null)
-    {
-        if (!$this->CalenderCpr->exists($id)) {
-            throw new NotFoundException(__('Invalid calender cpr'));
-        }
-        $options = array('conditions' => array('CalenderCpr.' . $this->CalenderCpr->primaryKey => $id));
-        $this->set('calenderCpr', $this->CalenderCpr->find('first', $options));
-    }
-
-    /**
-     * add method
-     *
-     * @return void
-     */
     public function add()
     {
-        $this->fetchdata();
-        $this->loaddata();
+        $this->loadModel('TblConsumptionStock');
+        $this->loadModel('MixingMaterials');
+        //$this->fetchdata();
+        //$this->loaddata();
+        $lastDate = $this->TblConsumptionStock->query('Select distinct(nepalidate) from tbl_consumption_stock order by nepalidate DESC limit 1')[0]['tbl_consumption_stock']['nepalidate'];
+        $consumptioItems = $this->TblConsumptionStock->query("SELECT * from tbl_consumption_stock where nepalidate = '$lastDate' AND LENGTH IS  NULL AND NTWT IS NULL ");
+        $material_lists = $this->MixingMaterials->query("SELECT * FROM mixing_materials");
         if ($this->request->is('post')) {
-            $this->CalenderCpr->create();
-            if ($this->CalenderCpr->saveAll($this->request->data['CalenderCpr'])) {
-                $this->ConsumptionStock->query("update consumption_stock set inserted='1'");
-                $this->Session->setFlash(__('The calender cpr has been saved.'), array('class' => 'alert alert-success'));
-                return $this->redirect(array('action' => 'index/sort:id/direction:desc'));
-            } else {
-                $this->Session->setFlash(__('The calender cpr could not be saved. Please, try again.'), array('class' => 'alert alert-danger'));
-            }
+            $id = $this->request->data('id');
+            $length = intval($this->request->data('length'));
+            $ntwt = intval($this->request->data('ntwt'));
+            //update value of length and ntwt
+            $updateQuery = $this->TblConsumptionStock->query("UPDATE tbl_consumption_stock SET length=$length,ntwt=$ntwt WHERE id=$id");
+            $this->Session->setFlash(__('The calender cpr has been updated.'), array('class' => 'alert alert-success'));
+            return $this->redirect(['action'=>'add']);
         }
+        $this->set('material_lists', $material_lists);
+        $this->set('lastDate',$lastDate);
+        $this->set('consumptionItems',$consumptioItems);
     }
 
     /**
@@ -172,21 +94,21 @@ class CalenderCprsController extends AppController
      */
     public function edit($id = null)
     {
-        $this->edit_data();
-        if (!$this->CalenderCpr->exists($id)) {
-            throw new NotFoundException(__('Invalid calender cpr'));
+        $this->loadModel('TblConsumptionStock');
+        $this->loadModel('MixingMaterials');
+        $consumptioItem = $this->TblConsumptionStock->query("SELECT * from tbl_consumption_stock where id=$id");
+        $material_lists = $this->MixingMaterials->query("SELECT * FROM mixing_materials");
+        if ($this->request->is('post')) {
+            $id = $this->request->data('id');
+            $length = intval($this->request->data('length'));
+            $ntwt = intval($this->request->data('ntwt'));
+            //update value of length and ntwt
+            $updateQuery = $this->TblConsumptionStock->query("UPDATE tbl_consumption_stock SET length=$length,ntwt=$ntwt WHERE id=$id");
+            $this->Session->setFlash(__('The calender cpr has been updated.'), array('class' => 'alert alert-success'));
+            return $this->redirect(['action'=>'index']);
         }
-        if ($this->request->is(array('post', 'put'))) {
-            if ($this->CalenderCpr->save($this->request->data)) {
-                $this->Session->setFlash(__('The calender cpr has been saved.'));
-                return $this->redirect(array('action' => 'index/sort:id/direction:desc'));
-            } else {
-                $this->Session->setFlash(__('The calender cpr could not be saved. Please, try again.'));
-            }
-        } else {
-            $options = array('conditions' => array('CalenderCpr.' . $this->CalenderCpr->primaryKey => $id));
-            $this->request->data = $this->CalenderCpr->find('first', $options);
-        }
+        $this->set('material_lists', $material_lists);
+        $this->set('consumptionItem',$consumptioItem);
     }
 
     /**
